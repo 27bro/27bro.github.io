@@ -69,16 +69,17 @@ layout: default
     <h2 class="section-title">Poster</h2>
     {% if page.conference %}<p class="section-desc">Presented at the {{ page.conference }}.</p>{% endif %}
 
+    {% assign cachebust = site.time | date: '%s' %}
     {% if page.poster_img %}
       {% if page.poster_pdf %}
-      <a href="{{ page.poster_pdf | relative_url }}" target="_blank" rel="noopener">
-        <img class="poster-img" src="{{ page.poster_img | relative_url }}" alt="{{ page.title }} poster">
+      <a href="{{ page.poster_pdf | relative_url }}?v={{ cachebust }}" target="_blank" rel="noopener">
+        <img class="poster-img" src="{{ page.poster_img | relative_url }}?v={{ cachebust }}" alt="{{ page.title }} poster">
       </a>
       <p class="poster-download">
-        <a class="btn btn-primary" href="{{ page.poster_pdf | relative_url }}" download>Download poster (PDF)</a>
+        <a class="btn btn-primary" href="{{ page.poster_pdf | relative_url }}?v={{ cachebust }}" download>Download poster (PDF)</a>
       </p>
       {% else %}
-      <img class="poster-img" src="{{ page.poster_img | relative_url }}" alt="{{ page.title }} poster">
+      <img class="poster-img" src="{{ page.poster_img | relative_url }}?v={{ cachebust }}" alt="{{ page.title }} poster">
       {% endif %}
     {% else %}
       <!--
