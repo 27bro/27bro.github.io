@@ -8,7 +8,7 @@
 # PPT 를 수정할 때마다 이 스크립트만 실행하면 홈페이지 포스터가 갱신됩니다.
 
 param(
-    [string]$Pptx = "C:\Users\LocalCH\Dropbox\Workplace\Git management works\Reward_Free\2026WCB\2026WCB_ChLee.pptx",
+    [string]$Pptx = "C:\Users\LocalCH\Dropbox\Workplace\Git management works\Reward_Free\202607WCB\2026WCB_ChLee.pptx",
     [int]$PngWidth = 1800
 )
 
