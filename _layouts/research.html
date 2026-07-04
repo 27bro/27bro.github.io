@@ -16,8 +16,9 @@ layout: default
       {% endif %}
     </p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#results">View results</a>
-      <a class="btn btn-ghost" href="#poster">See the poster</a>
+      {% if page.video_groups or page.videos_list or page.videos %}<a class="btn btn-primary" href="#results">View results</a>{% endif %}
+      {% if page.poster_img %}<a class="btn btn-ghost" href="#poster">See the poster</a>{% endif %}
+      {% if page.paper_url %}<a class="btn btn-ghost" href="{{ page.paper_url }}" target="_blank" rel="noopener">Read the paper</a>{% endif %}
     </div>
   </div>
 </section>
@@ -36,7 +37,7 @@ layout: default
 <section id="results" class="section section-alt">
   <div class="wrap">
     <h2 class="section-title">Result videos</h2>
-    <p class="section-desc">Each clip shows the sagittal (side) and frontal (front) views together.</p>
+    <p class="section-desc">{{ page.results_desc | default: "Each clip shows the sagittal (side) and frontal (front) views together." }}</p>
 
     {% if page.video_groups %}
       {% for g in page.video_groups %}
@@ -64,6 +65,7 @@ layout: default
 </section>
 
 <!-- ─────────────────────────── POSTER ─────────────────────────── -->
+{% if page.poster_img or page.show_poster_placeholder %}
 <section id="poster" class="section">
   <div class="wrap">
     <h2 class="section-title">Poster</h2>
@@ -95,5 +97,6 @@ layout: default
     {% endif %}
   </div>
 </section>
+{% endif %}
 
 {% include contact.html %}
