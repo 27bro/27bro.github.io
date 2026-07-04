@@ -251,7 +251,6 @@ video.video, img.video { height: auto; aspect-ratio: auto; object-fit: contain; 
 }
 @media (max-width: 720px) {
   .nav-links { gap: 14px; font-size: 0.86rem; }
-  .nav-links a:nth-child(1) { display: none; }
   .video-grid, .video-grid.cols-3, .video-grid.cols-4 { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .hero { padding: 60px 0 54px; }
