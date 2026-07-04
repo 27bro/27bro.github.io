@@ -1,0 +1,46 @@
+# ── Site identity ────────────────────────────────────────────────
+title: "Referent-Configuration Imitation Learning (RCIL)"
+tagline: "for Predictive Musculoskeletal Simulation"
+description: >-
+  Referent-Configuration Imitation Learning (RCIL): a referent-control
+  imitation learning framework for predictive musculoskeletal simulation
+  of human walking and human–exoskeleton interaction.
+
+author:
+  name: "Chihyeong Lee"
+  role: "Ph.D. Candidate"
+  affiliation: "Seoul National University, Sports Engineering Lab (SEL)"
+
+conference: "10th World Congress of Biomechanics"
+
+# ── Contact / social ─────────────────────────────────────────────
+email: "chi0412@snu.ac.kr"
+lab_url: "https://sports-engineering-lab.snu.ac.kr/"
+scholar_url: "https://scholar.google.com/citations?user=w2A9LGkAAAAJ&hl=en"
+linkedin_url: "https://www.linkedin.com/in/chihyeong-lee-7b9907373/"
+
+# ── URLs ─────────────────────────────────────────────────────────
+# 로컬 개발 시에는 빈 값으로 두세요.
+# GitHub Pages 프로젝트 사이트(username.github.io/repo-name)로 배포할 때만
+# baseurl 을 "/repo-name" 으로 바꾸세요. (자세한 건 README 참고)
+baseurl: ""
+url: "https://27bro.github.io"
+
+# ── 검색엔진 색인 차단 스위치 ────────────────────────────────────
+# true  : 검색엔진에 노출 안 됨(noindex + robots Disallow). 링크/QR 접속은 됨.
+# false : 검색 허용. 학회 즈음 검색 노출을 원하면 false 로 바꾸고 재배포하세요.
+noindex: true
+
+# ── Build settings ───────────────────────────────────────────────
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

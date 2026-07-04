@@ -1,0 +1,28 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+<section class="section">
+  <div class="wrap">
+    <h1 class="section-title">Research &amp; blog</h1>
+    <p class="section-desc">My research projects and updates — click an entry to explore.</p>
+
+    {% if site.posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in site.posts %}
+      <li class="post-list-item">
+        <a class="post-list-link" href="{{ post.url | relative_url }}">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <span class="post-list-title">{{ post.title }}</span>
+          {% assign post_sub = post.conference | default: post.subtitle %}
+          {% if post_sub %}<span class="post-list-excerpt">{{ post_sub }}</span>{% endif %}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No posts yet. Check back soon.</p>
+    {% endif %}
+  </div>
+</section>

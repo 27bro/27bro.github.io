@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<!-- ─────────────────────────── HERO ─────────────────────────── -->
+<section class="hero hero-sub-page">
+  <div class="wrap hero-inner">
+    {% if page.conference %}<span class="conf-badge">{{ page.conference }}</span>{% endif %}
+    <h1 class="hero-title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="hero-sub">{{ page.subtitle }}</p>{% endif %}
+    <p class="hero-author">
+      {% if page.authors %}
+        <strong>{{ page.authors }}</strong><br>{{ site.author.affiliation }}
+      {% else %}
+        <strong>{{ site.author.name }}</strong> — {{ site.author.role }}, {{ site.author.affiliation }}
+      {% endif %}
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#results">View results</a>
+      <a class="btn btn-ghost" href="#poster">See the poster</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── ABOUT THE RESEARCH ─────────────────────────── -->
+<section id="about" class="section">
+  <div class="wrap">
+    <h2 class="section-title">About the research</h2>
+    <div class="research-body">
+      {{ content }}
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── RESULT VIDEOS ─────────────────────────── -->
+<section id="results" class="section section-alt">
+  <div class="wrap">
+    <h2 class="section-title">Result videos</h2>
+    <p class="section-desc">Each clip shows the sagittal (side) and frontal (front) views together.</p>
+
+    {% if page.video_groups %}
+      {% for g in page.video_groups %}
+      {% if g.title %}<h3 class="video-group-title">{{ g.title }}</h3>{% endif %}
+      <div class="video-grid cols-{{ g.columns | default: 3 }}">
+        {% for v in g.videos %}{% include video_card.html v=v %}{% endfor %}
+      </div>
+      {% endfor %}
+    {% elsif page.videos_list %}
+      <div class="video-grid cols-{{ page.video_columns | default: 3 }}">
+        {% for v in page.videos_list %}{% include video_card.html v=v %}{% endfor %}
+      </div>
+    {% else %}
+      {% assign n_videos = page.videos | default: 4 %}
+      <div class="video-grid">
+        {% for i in (1..n_videos) %}
+        <figure class="video-card">
+          <div class="video-placeholder"><span>▶</span><p>Video {{ i }}</p></div>
+          <figcaption>Result {{ i }} — caption</figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+      {% endif %}
+  </div>
+</section>
+
+<!-- ─────────────────────────── POSTER ─────────────────────────── -->
+<section id="poster" class="section">
+  <div class="wrap">
+    <h2 class="section-title">Poster</h2>
+    {% if page.conference %}<p class="section-desc">Presented at the {{ page.conference }}.</p>{% endif %}
+
+    {% if page.poster_img %}
+      {% if page.poster_pdf %}
+      <a href="{{ page.poster_pdf | relative_url }}" target="_blank" rel="noopener">
+        <img class="poster-img" src="{{ page.poster_img | relative_url }}" alt="{{ page.title }} poster">
+      </a>
+      <p class="poster-download">
+        <a class="btn btn-primary" href="{{ page.poster_pdf | relative_url }}" download>Download poster (PDF)</a>
+      </p>
+      {% else %}
+      <img class="poster-img" src="{{ page.poster_img | relative_url }}" alt="{{ page.title }} poster">
+      {% endif %}
+    {% else %}
+      <!--
+        포스터 넣는 법: 이 연구 글의 front matter 에 아래 두 줄을 추가하세요.
+          poster_img: /assets/img/poster.png
+          poster_pdf: /assets/files/poster.pdf   (선택, 다운로드 버튼용)
+      -->
+      <div class="poster-placeholder">
+        <div class="ph-icon">🖼️</div>
+        <p class="ph-title">Poster placeholder</p>
+        <p class="ph-note">Poster image / PDF will be added here.</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% include contact.html %}

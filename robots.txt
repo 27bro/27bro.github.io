@@ -1,0 +1,6 @@
+---
+---
+User-agent: *
+{% if site.noindex %}Disallow: /
+{% else %}Disallow:
+{% endif %}

@@ -1,0 +1,16 @@
+{% assign v = include.v %}
+<figure class="video-card">
+  {% if v.file and v.file != "" %}
+    {% assign ext = v.file | split: '.' | last | downcase %}
+    {% if ext == 'gif' %}
+      <img class="video" src="{{ v.file | relative_url }}" alt="{{ v.label }}">
+    {% elsif ext == 'mp4' or ext == 'webm' %}
+      <video class="video" autoplay muted loop playsinline controls preload="metadata"><source src="{{ v.file | relative_url }}" type="video/{{ ext }}"></video>
+    {% else %}
+      <div class="video video-embed"><iframe src="{{ v.file }}" title="{{ v.label }}" allowfullscreen></iframe></div>
+    {% endif %}
+  {% else %}
+    <div class="video-placeholder"><span>▶</span><p>{{ v.label }}</p></div>
+  {% endif %}
+  <figcaption>{{ v.label }}</figcaption>
+</figure>

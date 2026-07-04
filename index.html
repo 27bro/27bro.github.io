@@ -1,0 +1,91 @@
+---
+layout: default
+title: About
+---
+
+<!-- ─────────────────────────── HERO (personal) ─────────────────────────── -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <h1 class="hero-title">{{ site.author.name }}</h1>
+    <p class="hero-sub">{{ site.author.role }}</p>
+
+    <p class="hero-author">
+      {{ site.author.affiliation }}
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/10th-wcb/' | relative_url }}">10th WCB poster</a>
+      <a class="btn btn-ghost" href="{{ '/blog/' | relative_url }}">Research &amp; blog</a>
+    </div>
+
+    <div class="hero-links">
+      <a href="mailto:{{ site.email }}">✉ Email</a>
+      <a href="{{ site.lab_url }}" target="_blank" rel="noopener">🔬 Lab (SEL)</a>
+      <a href="{{ site.scholar_url }}" target="_blank" rel="noopener">🎓 Google Scholar</a>
+      <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">in LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── ABOUT ME ─────────────────────────── -->
+<section id="about" class="section">
+  <div class="wrap">
+    <h2 class="section-title">About me</h2>
+    <p class="lead">
+      I am a Ph.D. candidate at the <a href="{{ site.lab_url }}" target="_blank" rel="noopener">Sports
+      Engineering Lab (SEL)</a>, Seoul National University. I build
+      <strong>predictive musculoskeletal digital twins</strong> of human movement.
+    </p>
+    <p>
+      My work sits at the intersection of biomechanics, human motor control, and
+      machine learning. I combine imitation and reinforcement learning with
+      equilibrium-point (referent) control to create simulations that not only
+      reproduce how people walk, but also <strong>predict how they respond to
+      external forces</strong> — such as slips, perturbations, and wearable-robot
+      assistance — in ways that can be checked against measured kinematics, ground
+      reaction forces, and EMG.
+    </p>
+    <p>
+      I am currently on the job market. My goal is to bridge physically grounded
+      musculoskeletal modeling and modern learning-based control for rehabilitation,
+      assistive robotics, and human performance.
+    </p>
+
+    <div class="pill-row">
+      <span class="pill">Musculoskeletal Simulation</span>
+      <span class="pill">Human Motor Control</span>
+      <span class="pill">Biomechanics</span>
+      <span class="pill">Imitation &amp; Reinforcement Learning</span>
+      <span class="pill">Wearable / Assistive Robotics</span>
+      <span class="pill">Reactive Balance</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── JOB POSTER (placeholder) ─────────────────────────── -->
+<section id="job-poster" class="section section-alt">
+  <div class="wrap">
+    <h2 class="section-title">Job market poster</h2>
+    <p class="section-desc">Prepared for the job poster session. (Coming soon.)</p>
+
+    <!--
+      ▼▼▼ job poster 넣는 법 (나중에 이 주석 블록을 실제 내용으로 교체) ▼▼▼
+      1) 포스터를 PNG 로 내보내 assets/img/job_poster.png 로 저장
+      2) (선택) assets/files/job_poster.pdf 로 PDF 저장
+      3) 아래 .poster-placeholder <div> 를 지우고 다음 코드로 교체:
+
+         <a href="{{ '/assets/files/job_poster.pdf' | relative_url }}" target="_blank" rel="noopener">
+           <img class="poster-img" src="{{ '/assets/img/job_poster.png' | relative_url }}"
+                alt="{{ site.author.name }} — job market poster">
+         </a>
+      ▲▲▲ 여기까지 ▲▲▲
+    -->
+    <div class="poster-placeholder">
+      <div class="ph-icon">🖼️</div>
+      <p class="ph-title">Job poster placeholder</p>
+      <p class="ph-note">Poster image / PDF will be added here.</p>
+    </div>
+  </div>
+</section>
+
+{% include contact.html %}
