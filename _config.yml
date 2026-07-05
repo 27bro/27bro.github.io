@@ -18,6 +18,7 @@ email: "chi0412@snu.ac.kr"
 lab_url: "https://sports-engineering-lab.snu.ac.kr/"
 scholar_url: "https://scholar.google.com/citations?user=w2A9LGkAAAAJ&hl=en"
 linkedin_url: "https://www.linkedin.com/in/chihyeong-lee-7b9907373/"
+cv_pdf: "/assets/files/cv.pdf"
 
 # ── URLs ─────────────────────────────────────────────────────────
 # 로컬 개발 시에는 빈 값으로 두세요.
