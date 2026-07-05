@@ -33,58 +33,50 @@ title: About
     <h2 class="section-title">About me</h2>
     <p class="lead">
       I am a Ph.D. candidate at the <a href="{{ site.lab_url }}" target="_blank" rel="noopener">Sports
-      Engineering Lab (SEL)</a>, Seoul National University. I build
-      <strong>predictive musculoskeletal digital twins</strong> of human movement.
+      Engineering Lab (SEL)</a>, Seoul National University (expected Ph.D., Feb 2027).
+      My goal is to integrate <strong>biomechanics, wearable robotics, and digital human
+      simulation</strong> to evaluate, understand, and predict human movement.
     </p>
     <p>
-      My work sits at the intersection of biomechanics, human motor control, and
-      machine learning. I combine imitation and reinforcement learning with
-      equilibrium-point (referent) control to create simulations that not only
-      reproduce how people walk, but also <strong>predict how they respond to
-      external forces</strong> — such as slips, perturbations, and wearable-robot
-      assistance — in ways that can be checked against measured kinematics, ground
-      reaction forces, and EMG.
+      My research spans three connected themes: <strong>human–robot interaction</strong>
+      (how assistive wearables change coordination and muscle demand),
+      <strong>human response analysis</strong> (slip and perturbation experiments on
+      instrumented treadmills), and <strong>human movement prediction</strong> through
+      musculoskeletal simulation combined with imitation and reinforcement learning.
+      I develop custom experimental software and predictive models that can be validated
+      against measured kinematics, ground reaction forces, and EMG.
     </p>
     <p>
-      I am currently on the job market. My goal is to bridge physically grounded
-      musculoskeletal modeling and modern learning-based control for rehabilitation,
-      assistive robotics, and human performance.
+      I am currently on the job market and seeking a <strong>postdoctoral position</strong>.
+      I aim to bridge experimentally grounded biomechanics, musculoskeletal modeling, and
+      learning-based control for rehabilitation, assistive robotics, and human performance.
     </p>
 
     <div class="pill-row">
+      <span class="pill">Digital Human Simulation</span>
+      <span class="pill">Human–Robot Interaction</span>
+      <span class="pill">Human Response Analysis</span>
+      <span class="pill">Movement Prediction</span>
       <span class="pill">Musculoskeletal Simulation</span>
-      <span class="pill">Human Motor Control</span>
-      <span class="pill">Biomechanics</span>
       <span class="pill">Imitation &amp; Reinforcement Learning</span>
-      <span class="pill">Wearable / Assistive Robotics</span>
-      <span class="pill">Reactive Balance</span>
     </div>
   </div>
 </section>
 
-<!-- ─────────────────────────── JOB POSTER (placeholder) ─────────────────────────── -->
+<!-- ─────────────────────────── JOB POSTER ─────────────────────────── -->
 <section id="job-poster" class="section section-alt">
   <div class="wrap">
     <h2 class="section-title">Job market poster</h2>
-    <p class="section-desc">Prepared for the job poster session. (Coming soon.)</p>
+    <p class="section-desc">Prepared for the job poster session at the 10th World Congress of Biomechanics.</p>
 
-    <!--
-      ▼▼▼ job poster 넣는 법 (나중에 이 주석 블록을 실제 내용으로 교체) ▼▼▼
-      1) 포스터를 PNG 로 내보내 assets/img/job_poster.png 로 저장
-      2) (선택) assets/files/job_poster.pdf 로 PDF 저장
-      3) 아래 .poster-placeholder <div> 를 지우고 다음 코드로 교체:
-
-         <a href="{{ '/assets/files/job_poster.pdf' | relative_url }}" target="_blank" rel="noopener">
-           <img class="poster-img" src="{{ '/assets/img/job_poster.png' | relative_url }}"
-                alt="{{ site.author.name }} — job market poster">
-         </a>
-      ▲▲▲ 여기까지 ▲▲▲
-    -->
-    <div class="poster-placeholder">
-      <div class="ph-icon">🖼️</div>
-      <p class="ph-title">Job poster placeholder</p>
-      <p class="ph-note">Poster image / PDF will be added here.</p>
-    </div>
+    {% assign cachebust = site.time | date: '%s' %}
+    <a href="{{ '/assets/files/job_poster.pdf' | relative_url }}?v={{ cachebust }}" target="_blank" rel="noopener">
+      <img class="poster-img" src="{{ '/assets/img/job_poster.png' | relative_url }}?v={{ cachebust }}"
+           alt="{{ site.author.name }} — job market poster">
+    </a>
+    <p class="poster-download">
+      <a class="btn btn-primary" href="{{ '/assets/files/job_poster.pdf' | relative_url }}?v={{ cachebust }}" download>Download poster (PDF)</a>
+    </p>
   </div>
 </section>
 
