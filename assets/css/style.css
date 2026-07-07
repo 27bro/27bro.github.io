@@ -165,6 +165,40 @@ html.mathjax-ready .eq-block:not(.eq-block--text) {
   color: var(--navy-2);
   font-weight: 600;
 }
+.eq-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+.eq-table th,
+.eq-table td {
+  padding: 9px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.eq-table th {
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.eq-table tbody tr:last-child td { border-bottom: none; }
+.eq-table td strong { color: var(--navy-2); font-weight: 600; }
+.eq-table .model-meta { display: block; font-size: 0.85em; color: var(--muted); font-weight: 400; margin-top: 2px; }
+.eq-table .th-note { font-weight: 400; text-transform: none; letter-spacing: 0; }
+.eq-table .model-row td {
+  border-top: 2px solid var(--line);
+  padding-top: 12px;
+}
+.eq-table .model-row:first-child td { border-top: none; }
+@media (max-width: 720px) {
+  .eq-table { font-size: 0.86rem; }
+  .eq-table th, .eq-table td { padding: 7px 8px; }
+}
 .eq-note { font-size: 0.9rem; color: var(--muted); margin-top: -6px; }
 .eq-legend {
   display: grid; grid-template-columns: repeat(3, auto);
