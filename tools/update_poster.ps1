@@ -7,7 +7,8 @@
 #   powershell -ExecutionPolicy Bypass -File .\tools\update_poster.ps1 -Target wcb
 #   powershell -ExecutionPolicy Bypass -File .\tools\update_poster.ps1 -Target job
 #
-# PPT 를 수정할 때마다 이 스크립트만 실행하면 홈페이지 포스터가 갱신됩니다.
+# PPT 수정 → 이 스크립트 → git push → 배포 확인
+# push 후 사이트 미반영 시: tools/DEPLOY.md 참고 (POST /pages/builds 로 재빌드)
 
 param(
     [ValidateSet('wcb', 'job', 'all')]
@@ -22,16 +23,16 @@ $root   = Split-Path -Parent $PSScriptRoot
 
 $Posters = @{
     wcb = @{
-        Pptx   = Join-Path $wcbDir "2026WCB_ChLee.pptx"
+        Pptx   = Join-Path $wcbDir "2026WCB_ChLee_Fianl.pptx"
         PngOut = Join-Path $root "assets\img\poster.png"
         PdfOut = Join-Path $root "assets\files\poster.pdf"
-        Label  = "10th WCB research poster"
+        Label  = "10th WCB research poster (Final)"
     }
     job = @{
-        Pptx   = Join-Path $wcbDir "2026WCB_JobPoster_CHLee.pptx"
+        Pptx   = Join-Path $wcbDir "2026WCB_JobPoster_CHLee_Final.pptx"
         PngOut = Join-Path $root "assets\img\job_poster.png"
         PdfOut = Join-Path $root "assets\files\job_poster.pdf"
-        Label  = "Job market poster"
+        Label  = "Job market poster (Final)"
     }
 }
 
