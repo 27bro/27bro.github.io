@@ -52,17 +52,19 @@ function Invoke-PagesDeploy {
     & $gh api -X POST repos/27bro/27bro.github.io/pages/builds | Out-Null
 
     Start-Sleep -Seconds $FirstWaitSec
-    $latest = & $gh api repos/27bro/27bro.github.io/pages/builds/latest
+    $raw = & $gh api repos/27bro/27bro.github.io/pages/builds/latest
+    $latest = $raw | ConvertFrom-Json
     $status = $latest.status
-    $commit = $latest.commit
+    $commit = [string]$latest.commit
     $commitShort = if ($commit.Length -ge 7) { $commit.Substring(0, 7) } else { $commit }
     Write-Host "After ${FirstWaitSec}s: status=$status commit=$commitShort"
 
     if ($status -ne "built") {
         Start-Sleep -Seconds $SecondWaitSec
-        $latest = & $gh api repos/27bro/27bro.github.io/pages/builds/latest
+        $raw = & $gh api repos/27bro/27bro.github.io/pages/builds/latest
+        $latest = $raw | ConvertFrom-Json
         $status = $latest.status
-        $commit = $latest.commit
+        $commit = [string]$latest.commit
         $commitShort = if ($commit.Length -ge 7) { $commit.Substring(0, 7) } else { $commit }
         Write-Host "After $($FirstWaitSec + $SecondWaitSec)s: status=$status commit=$commitShort"
     }
