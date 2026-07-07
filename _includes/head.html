@@ -17,14 +17,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz@0,6..72;1,6..72&display=swap" rel="stylesheet">
 
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
   {%- if page.math -%}
   <script>
     window.MathJax = {
       tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
-      svg: { fontCache: 'global' }
+      chtml: { scale: 1, minScale: 1 },
+      options: { renderActions: { addMenu: [0, '', ''] } },
+      startup: {
+        pageReady: function () {
+          return MathJax.startup.defaultPageReady().then(function () {
+            document.documentElement.classList.add('mathjax-ready');
+          });
+        }
+      }
     };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" id="MathJax-script" async></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script"></script>
+  <script>setTimeout(function(){document.documentElement.classList.add('mathjax-ready');},4000);</script>
   {%- endif -%}
 
   {%- feed_meta -%}

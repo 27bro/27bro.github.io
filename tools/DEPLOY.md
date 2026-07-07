@@ -53,13 +53,11 @@ $gh = "C:\Users\LocalCH\Tools\gh\bin\gh.exe"
 ```powershell
 $gh = "C:\Users\LocalCH\Tools\gh\bin\gh.exe"
 & $gh api -X POST repos/27bro/27bro.github.io/pages/builds
-```
-
-12초 간격으로 폴링:
-
-```powershell
+Start-Sleep -Seconds 15
 & $gh api repos/27bro/27bro.github.io/pages/builds/latest --jq "[.status,.commit[0:7]]"
 ```
+
+`built`가 아니면 30초 뒤 위 jq 한 줄만 **한 번 더** 확인. 2분 이상 폴링 루프는 하지 말 것 (터미널 로딩·교착 체감 방지).
 
 `built` + 최신 commit SHA 확인 후 라이ve 검증:
 
