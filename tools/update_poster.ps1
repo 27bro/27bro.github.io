@@ -23,7 +23,7 @@ $root   = Split-Path -Parent $PSScriptRoot
 
 $Posters = @{
     wcb = @{
-        Pptx   = Join-Path $wcbDir "2026WCB_ChLee_Fianl.pptx"
+        Pptx   = Join-Path $wcbDir "2026WCB_ChLee_Final.pptx"
         PngOut = Join-Path $root "assets\img\poster.png"
         PdfOut = Join-Path $root "assets\files\poster.pdf"
         Label  = "10th WCB research poster (Final)"
