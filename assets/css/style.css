@@ -111,6 +111,8 @@ a:hover { text-decoration: underline; }
 .hero-links a,
 .hero-links span { color: #cfe0f5 !important; font-size: 0.92rem; font-weight: 500; }
 .hero-links a:hover { color: #fff !important; text-decoration: none; }
+.hero-links .hero-icon { color: #fff !important; }
+.footer-email-icon { color: #fff; }
 
 /* ─────────────────────────── Sections ─────────────────────────── */
 .section { padding: 70px 0; }
