@@ -137,19 +137,28 @@ a:hover { text-decoration: underline; }
   overflow-x: auto;
 }
 .eq-block--text { overflow-x: visible; }
-.eq-block:not(.eq-block--text) { opacity: 0; }
+.eq-block:not(.eq-block--text) {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 html.mathjax-ready .eq-block:not(.eq-block--text) {
   opacity: 1;
   transition: opacity 0.15s ease;
 }
 .eq-block mjx-container {
-  margin: 8px 0 !important;
+  margin: 8px auto !important;
   text-align: left !important;
-  margin-left: 0 !important;
+  width: fit-content;
+  max-width: 100%;
 }
 .eq-block mjx-container[jax="CHTML"][display="true"] {
   display: block !important;
   text-align: left !important;
+}
+.eq-block .eq-legend {
+  width: 100%;
 }
 .eq-block-title {
   margin: 0 0 12px;
