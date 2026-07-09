@@ -2,10 +2,11 @@
   <div class="wrap footer-inner">
     <div>
       <strong>{{ site.author.name }}</strong> · {{ site.author.role }}<br>
-      {{ site.author.affiliation }}
+      {{ site.author.affiliation }}<br>
+      {{ site.email }}
     </div>
     <div class="footer-links">
-      <a href="mailto:{{ site.email }}">Email</a>
+      <a href="{{ site.cv_pdf | relative_url }}" target="_blank" rel="noopener">CV</a>
       <a href="{{ site.lab_url }}" target="_blank" rel="noopener">Lab</a>
       <a href="{{ site.scholar_url }}" target="_blank" rel="noopener">Scholar</a>
       <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
