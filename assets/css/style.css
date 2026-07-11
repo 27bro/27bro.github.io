@@ -131,9 +131,9 @@ a:hover { text-decoration: underline; }
 }
 .about-photo {
   float: left;
-  width: 168px;
+  width: 148px;
   height: auto;
-  margin: 4px 22px 14px 0;
+  margin: 0 22px 8px 0;
   border-radius: 8px;
   object-fit: cover;
   display: block;
@@ -141,9 +141,12 @@ a:hover { text-decoration: underline; }
 .about-body .lead {
   max-width: none;
 }
+.about-body .lead:first-of-type {
+  padding-top: 22px;
+}
 .about-continue {
   clear: both;
-  padding-top: 6px;
+  padding-top: 2px;
 }
 .about-body::after {
   content: "";
