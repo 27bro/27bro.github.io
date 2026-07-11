@@ -125,6 +125,37 @@ a:hover { text-decoration: underline; }
 .lead { font-size: 1.12rem; color: var(--ink); }
 .section p { max-width: 760px; }
 
+.about-body {
+  max-width: 760px;
+  overflow: auto;
+}
+.about-photo {
+  float: left;
+  width: 168px;
+  height: auto;
+  margin: 4px 22px 14px 0;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+.about-body .lead {
+  max-width: none;
+}
+.about-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 720px) {
+  .about-photo {
+    float: none;
+    display: block;
+    width: 140px;
+    margin: 0 0 18px;
+  }
+}
+
 /* research entry body (rendered markdown) */
 .research-body { max-width: 760px; font-size: 1.06rem; }
 .research-body p { max-width: 760px; }
