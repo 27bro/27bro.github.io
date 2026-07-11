@@ -27,6 +27,9 @@ cv_pdf: "/assets/files/cv.pdf"
 baseurl: ""
 url: "https://27bro.github.io"
 
+# 링크 공유(OG) 미리보기 — 파란 히어로 배너 (증명사진 대신)
+logo: /assets/img/og_banner.png
+
 # ── 검색엔진 색인 차단 스위치 ────────────────────────────────────
 # true  : 검색엔진에 노출 안 됨(noindex + robots Disallow). 링크/QR 접속은 됨.
 # false : 검색 허용. 학회 즈음 검색 노출을 원하면 false 로 바꾸고 재배포하세요.
@@ -39,6 +42,12 @@ permalink: /blog/:year/:month/:day/:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og_banner.png
 
 exclude:
   - Gemfile
