@@ -141,6 +141,10 @@ a:hover { text-decoration: underline; }
 .about-body .lead {
   max-width: none;
 }
+.about-continue {
+  clear: both;
+  padding-top: 6px;
+}
 .about-body::after {
   content: "";
   display: table;
