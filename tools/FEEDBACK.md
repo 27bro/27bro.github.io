@@ -1,58 +1,25 @@
-# Feedback (Like + comments)
+# Message form (email)
 
-Free setup with [Supabase](https://supabase.com) (free tier). No user accounts — name + affiliation only.
+About / research / blog 페이지 하단의 **Send a message** 폼입니다.  
+방문자가 이름·회신 이메일·내용을 보내면 [FormSubmit](https://formsubmit.co)이 `site.email`(`chi0412@snu.ac.kr`)로 전달합니다.
 
-## What you get
+## 첫 사용 (중요)
 
-- **Like** button (one like per browser)
-- **Comments** with name / affiliation
-- **Private** checkbox: visible only to
-  - the comment author **on that same browser** (token in `localStorage`)
-  - you, via **Admin view** + password
+1. 사이트에서 테스트로 한 번 **Send email**
+2. FormSubmit이 **당신의 메일함**으로 확인(activation) 메일을 보냄
+3. 메일 안 링크를 클릭해야 이후 메시지가 실제로 수신
 
-Shown on:
+확인 전에는 폼이 “보낸 것처럼” 보여도 수신이 안 될 수 있습니다.
 
-- About (`index.html`)
-- Research posts (`layout: research`)
-- Blog posts (`layout: post`)
+## 끄기
 
-## Setup (once)
-
-1. Create a free Supabase project.
-2. Open **SQL Editor**, paste and run `tools/supabase_feedback.sql`.
-3. Set your admin password:
-
-```sql
-select public.set_feedback_admin_password('YOUR_PASSWORD_HERE');
-```
-
-4. (Recommended) lock password changes from the web:
-
-```sql
-revoke execute on function public.set_feedback_admin_password(text) from anon, authenticated;
-```
-
-5. **Project Settings → API** → copy Project URL (`https://xxxx.supabase.co`, without `/rest/v1/`) and the **publishable** key (legacy name: `anon` `public`).
-6. Edit `_config.yml`:
+`_config.yml`:
 
 ```yaml
 feedback:
-  enabled: true
-  supabase_url: "https://YOUR_PROJECT.supabase.co"
-  supabase_anon_key: "sb_publishable_..."   # or legacy eyJ... anon key
+  enabled: false
 ```
 
-Do **not** put the **secret** key in the website.
-7. Commit, push, run `tools/deploy.ps1`.
+## 예전 Supabase Like/댓글
 
-Until `enabled: true` and keys are set, the Feedback block is hidden.
-
-## Admin view
-
-On any page with Feedback → **Admin view** → enter the password from step 3 → **Show all comments**.  
-That loads public + private comments for that page only.
-
-## Limits (by design)
-
-- No login → “only you” for private comments means **this browser**. Clearing site data loses that view (you can still see them as admin).
-- `anon` key is public (normal for static sites). RLS + RPCs keep private bodies off public selects.
+더 이상 쓰지 않습니다. `tools/supabase_feedback.sql`은 참고용으로만 남겨 두었고, 사이트에서는 호출하지 않습니다.

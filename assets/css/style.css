@@ -396,61 +396,9 @@ video.video, img.video { height: auto; aspect-ratio: auto; object-fit: contain; 
 .post-body blockquote { border-left: 3px solid var(--accent); margin: 1.4em 0; padding: 4px 18px; color: var(--muted); background: var(--bg-alt); border-radius: 0 8px 8px 0; }
 .post-body code { background: var(--bg-alt); padding: 2px 6px; border-radius: 6px; font-size: 0.92em; }
 
-/* ─────────────────────────── Feedback ─────────────────────────── */
+/* ─────────────────────────── Feedback (email form) ───────────── */
 .feedback-section { border-top: 1px solid var(--line); }
 .feedback-wrap { max-width: 760px; }
-.feedback-like-row {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; margin: 8px 0 22px; flex-wrap: wrap;
-}
-.feedback-like-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  min-width: 120px; justify-content: center;
-}
-.feedback-like-btn.is-liked {
-  background: rgba(45, 212, 191, 0.12);
-  border-color: var(--accent-deep);
-  color: var(--accent-deep);
-}
-.feedback-like-icon { font-size: 1.05rem; line-height: 1; }
-.feedback-like-count {
-  display: inline-block; min-width: 1.4em;
-  font-variant-numeric: tabular-nums; font-weight: 700;
-}
-.feedback-admin-link {
-  border: 0; background: transparent; color: var(--muted);
-  font-size: 0.82rem; cursor: pointer; padding: 4px 0;
-}
-.feedback-admin-link:hover { color: var(--accent-deep); text-decoration: underline; }
-.feedback-admin-panel {
-  background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 16px 18px; margin-bottom: 20px;
-}
-.feedback-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
-.feedback-empty { color: var(--muted); margin: 0; }
-.feedback-comment {
-  background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 14px 16px;
-}
-.feedback-comment.is-private {
-  border-style: dashed;
-  background: #f8fafc;
-}
-.feedback-comment-meta {
-  color: var(--muted); font-size: 0.84rem; margin-bottom: 8px;
-  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
-}
-.feedback-comment-body { margin: 0; white-space: pre-wrap; word-break: break-word; }
-.feedback-badge {
-  display: inline-block; font-size: 0.72rem; font-weight: 600;
-  padding: 2px 8px; border-radius: 999px;
-  background: var(--bg-alt); border: 1px solid var(--line); color: var(--muted);
-}
-.feedback-badge-mine {
-  background: rgba(45, 212, 191, 0.14);
-  border-color: rgba(13, 148, 136, 0.35);
-  color: var(--accent-deep);
-}
 .feedback-form {
   background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 18px 18px 16px;
@@ -466,24 +414,18 @@ video.video, img.video { height: auto; aspect-ratio: auto; object-fit: contain; 
   border: 1px solid var(--line); border-radius: 10px;
   padding: 10px 12px; background: #fff;
 }
-.feedback-field textarea { resize: vertical; min-height: 96px; }
+.feedback-field textarea { resize: vertical; min-height: 110px; }
 .feedback-field input:focus,
 .feedback-field textarea:focus {
   outline: 2px solid rgba(13, 148, 136, 0.28);
   border-color: var(--accent-deep);
 }
-.feedback-check {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: 0.9rem; color: var(--muted); margin: 4px 0 14px; cursor: pointer;
-}
-.feedback-check input { margin-top: 3px; }
 .feedback-form-actions {
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
 }
-.feedback-status, .feedback-hint {
-  margin: 0; font-size: 0.88rem; color: var(--muted);
+.feedback-status {
+  margin: 0; font-size: 0.88rem; color: var(--accent-deep); font-weight: 500;
 }
-.feedback-status.is-error, .feedback-hint.is-error { color: #b42318; }
 
 /* ─────────────────────────── Footer ─────────────────────────── */
 .site-footer { background: var(--navy); color: #cfe0f5; padding: 40px 0; margin-top: 0; }

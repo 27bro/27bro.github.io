@@ -41,10 +41,10 @@ bundle exec jekyll serve
 그 다음 브라우저에서 **http://localhost:4000** 접속.
 파일을 저장하면 자동으로 다시 빌드됩니다 (`_config.yml` 만 예외 → 서버 재시작 필요).
 
-## 2.5 Like / 댓글 (Feedback)
+## 2.5 Send a message (이메일 폼)
 
-About·연구 글 하단에 Like + 댓글(공개/비공개)을 켤 수 있습니다.  
-설정: [`tools/FEEDBACK.md`](tools/FEEDBACK.md) · SQL: [`tools/supabase_feedback.sql`](tools/supabase_feedback.sql)
+About·연구 글 하단에 이름 / 회신 이메일 / 메시지 → 본인 메일로 전송.  
+설정: [`tools/FEEDBACK.md`](tools/FEEDBACK.md) (FormSubmit, 무료 · 첫 전송 시 메일 확인 필요)
 
 ## 3. 내용 수정하는 법
 

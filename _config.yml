@@ -35,12 +35,10 @@ logo: /assets/img/og_banner.png
 # false : 검색 허용. 학회 즈음 검색 노출을 원하면 false 로 바꾸고 재배포하세요.
 noindex: true
 
-# ── Feedback (Like + comments via Supabase free tier) ────────────
-# 설정 방법: tools/FEEDBACK.md
+# ── Message form (emails site.email via FormSubmit, free) ────────
+# 첫 전송 시 FormSubmit이 site.email 로 확인 메일을 보냄 → 링크 클릭 후부터 수신
 feedback:
   enabled: true
-  supabase_url: "https://bfotxeddbgrjvpzjmtlw.supabase.co"
-  supabase_anon_key: "sb_publishable_yVii7Xb6oRiu7B_iXFaLxg_bsSIzR46"
 
 # ── Build settings ───────────────────────────────────────────────
 markdown: kramdown
