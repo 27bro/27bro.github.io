@@ -1,0 +1,60 @@
+{% if site.feedback.enabled and site.feedback.supabase_url and site.feedback.supabase_anon_key %}
+<section id="feedback" class="section section-alt feedback-section"
+         data-page-id="{{ include.page_id | default: page.url }}"
+         data-supabase-url="{{ site.feedback.supabase_url }}"
+         data-supabase-anon-key="{{ site.feedback.supabase_anon_key }}">
+  <div class="wrap feedback-wrap">
+    <h2 class="section-title">Feedback</h2>
+    <p class="section-desc">Like this page or leave a short comment. No account needed.</p>
+
+    <div class="feedback-like-row">
+      <button type="button" class="btn btn-ghost feedback-like-btn" id="feedback-like-btn" aria-pressed="false">
+        <span class="feedback-like-icon" aria-hidden="true">♥</span>
+        <span id="feedback-like-label">Like</span>
+        <span class="feedback-like-count" id="feedback-like-count">0</span>
+      </button>
+      <button type="button" class="feedback-admin-link" id="feedback-admin-toggle">Admin view</button>
+    </div>
+
+    <div class="feedback-admin-panel" id="feedback-admin-panel" hidden>
+      <label class="feedback-field">
+        <span>Admin password</span>
+        <input type="password" id="feedback-admin-password" autocomplete="current-password" placeholder="Site author only">
+      </label>
+      <button type="button" class="btn btn-primary" id="feedback-admin-load">Show all comments</button>
+      <p class="feedback-hint" id="feedback-admin-status"></p>
+    </div>
+
+    <div class="feedback-list" id="feedback-comment-list" aria-live="polite">
+      <p class="feedback-empty" id="feedback-empty">Loading comments…</p>
+    </div>
+
+    <form class="feedback-form" id="feedback-form">
+      <div class="feedback-form-grid">
+        <label class="feedback-field">
+          <span>Name</span>
+          <input type="text" name="name" id="feedback-name" maxlength="80" required placeholder="Your name">
+        </label>
+        <label class="feedback-field">
+          <span>Affiliation</span>
+          <input type="text" name="affiliation" id="feedback-affiliation" maxlength="120" placeholder="Lab / university / company">
+        </label>
+      </div>
+      <label class="feedback-field">
+        <span>Comment</span>
+        <textarea name="body" id="feedback-body" rows="4" maxlength="4000" required placeholder="Write a short comment…"></textarea>
+      </label>
+      <label class="feedback-check">
+        <input type="checkbox" name="private" id="feedback-private">
+        <span>Private — visible only to you (this browser) and the site author</span>
+      </label>
+      <div class="feedback-form-actions">
+        <button type="submit" class="btn btn-primary" id="feedback-submit">Post comment</button>
+        <p class="feedback-status" id="feedback-status" role="status"></p>
+      </div>
+    </form>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="{{ '/assets/js/feedback.js' | relative_url }}" defer></script>
+{% endif %}
