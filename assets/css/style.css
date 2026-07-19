@@ -316,6 +316,13 @@ html.mathjax-ready .eq-block:not(.eq-block--text) {
 .fig-grid figcaption { padding: 10px 14px; font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--line); line-height: 1.45; }
 @media (max-width: 720px) { .fig-grid img { height: auto; } }
 
+.fig-grid--single { grid-template-columns: 1fr; max-width: 860px; margin-left: auto; margin-right: auto; }
+.fig-grid--single img { height: auto; padding: 16px; }
+
+.reference-list { margin: 12px 0 6px; padding-left: 1.4em; color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+.reference-list li { margin: 6px 0; }
+.reference-list li:target { background: #eef7f5; border-radius: 6px; padding: 2px 6px; }
+
 /* ─────────────────────────── Poster ─────────────────────────── */
 .poster-img {
   width: 100%; max-width: 900px; display: block; margin: 0 auto;
